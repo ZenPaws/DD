@@ -58,7 +58,7 @@ public class WoodModConf {
             ItemStack WoolWhiteStack = new ItemStack(Block.cloth,1,2);
             ItemStack fleshStack = new ItemStack(Item.rottenFlesh,17);
             
-            GameRegistry.addShapelessRecipe(fleshStack, redstoneStack,redstoneStack,dirtStack,dirtStack);
+            GameRegistry.addShapelessRecipe(fleshStack, Item.redstone,redstoneStack,dirtStack,dirtStack);// Item.redstone can work instead of stack much easier
        
             ItemStack appleStack = new ItemStack(Item.appleRed,1);
             ItemStack goldenAppleStack = new ItemStack(Item.appleGold,1);
