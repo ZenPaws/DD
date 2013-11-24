@@ -70,6 +70,12 @@ public class WoodModConf {
             
             GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); 
             
+            
+            /*---------My shaped crafting here----------*/
+            GameRegistry.addRecipe(goldenNuggetStack, "XY" , "YX",
+            		'X',appleStack , 'Y',fleshStack);
+            
+            
             GameRegistry.registerBlock(GoldenWood, "Golden Wood");
             LanguageRegistry.addName(GoldenWood, "Golden Wood");
             
