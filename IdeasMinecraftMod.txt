@@ -1,6 +1,6 @@
 Regen bush golden apples (rare)
-
+Raccoons
 Diffren damage values for trees
-
+Plants/w sapling properties 
 Keep the wooden tools the same
 
