@@ -1,5 +1,6 @@
 package net.DD.mod;
 
+import net.DD.mod.blocks.SugarCaneBlock;
 import net.DD.mod.lib.Version;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,7 +16,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+
 
 @Mod(modid = Version.MOD_ID,
 name = Version.MOD_NAME,
@@ -24,15 +25,7 @@ version = Version.MOD_VERSION)
 @NetworkMod(clientSideRequired=true)
 public class WoodModConf {
 	
-	//Add a block (Golden Wood)
-	public final static Block GoldenWood = new GoldenWood
-			(500, Material.wood).setHardness(3)
-			.setStepSound(Block.soundWoodFootstep)
-			.setUnlocalizedName("Golden Wood")
-			.setCreativeTab(CreativeTabs.tabBlock)
-			.setTextureName("woodmod:log_golden");
-			
-
+	
 	 // The instance of your mod that Forge uses.
     @Instance(Version.MOD_ID)
     public static WoodModConf instance;
@@ -78,13 +71,15 @@ public class WoodModConf {
             GameRegistry.addRecipe(goldenNuggetStack, "XY" , "YX",
             		'X',appleStack , 'Y',fleshStack);
             
-            ItemStack dragonEggStack = new ItemStack(Block.dragonEgg);
             /*ender dragon egg recipe*/
+            ItemStack dragonEggStack = new ItemStack(Block.dragonEgg);
             GameRegistry.addRecipe(dragonEggStack, "XXX" ,"XYX", "XXX",
             		'X',Block.obsidian , 'Y',Item.netherStar);
             
-            GameRegistry.registerBlock(GoldenWood, "Golden Wood");
-            LanguageRegistry.addName(GoldenWood, "Golden Wood");
+            
+            
+            
+            
             
             
     }
