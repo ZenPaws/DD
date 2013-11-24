@@ -56,7 +56,9 @@ public class WoodModConf {
             ItemStack dirtStack = new ItemStack(Block.dirt,2); // This 2 doesn't do shit
             ItemStack redstoneStack = new ItemStack(Item.redstone,64);
             ItemStack WoolWhiteStack = new ItemStack(Block.cloth,1,2);
+            ItemStack fleshStack = new ItemStack(Item.rottenFlesh,17);
             
+            GameRegistry.addShapelessRecipe(fleshStack, redstoneStack,redstoneStack,dirtStack,dirtStack);
             GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); // The 2 dirtStack's makes it so you need 2 dirt
             GameRegistry.addShapelessRecipe(redstoneStack,WoolWhiteStack,dirtStack);
             
