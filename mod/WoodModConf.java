@@ -53,12 +53,18 @@ public class WoodModConf {
             proxy.registerRenderers();
             
             //Blocks + crafting in the game goes in here
-            ItemStack dirtStack = new ItemStack(Block.dirt,2); // This 2 doesn't do shit
+            ItemStack dirtStack = new ItemStack(Block.dirt,3); // This 2 doesn't do shit
             ItemStack redstoneStack = new ItemStack(Item.redstone,64);
-            ItemStack WoolWhiteStack = new ItemStack(Block.cloth,1,2);
             
+            ItemStack appleStack = new ItemStack(Item.appleRed,1);
+            ItemStack goldenAppleStack = new ItemStack(Item.appleGold,1);
+            ItemStack goldenNuggetStack = new ItemStack(Item.goldNugget,5);
+            
+            GameRegistry.addShapelessRecipe(goldenAppleStack,appleStack,goldenNuggetStack);
             GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); // The 2 dirtStack's makes it so you need 2 dirt
-            GameRegistry.addShapelessRecipe(redstoneStack,WoolWhiteStack,dirtStack);
+            
+            
+            GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); 
             
             GameRegistry.registerBlock(GoldenWood, "Golden Wood");
             LanguageRegistry.addName(GoldenWood, "Golden Wood");
