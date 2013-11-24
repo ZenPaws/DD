@@ -64,6 +64,9 @@ public class WoodModConf {
             ItemStack goldenAppleStack = new ItemStack(Item.appleGold,1);
             ItemStack goldenNuggetStack = new ItemStack(Item.goldNugget,5);
             
+            
+            
+            
             GameRegistry.addShapelessRecipe(goldenAppleStack,appleStack,goldenNuggetStack);
             GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); // The 2 dirtStack's makes it so you need 2 dirt
             
@@ -75,6 +78,10 @@ public class WoodModConf {
             GameRegistry.addRecipe(goldenNuggetStack, "XY" , "YX",
             		'X',appleStack , 'Y',fleshStack);
             
+            ItemStack dragonEggStack = new ItemStack(Block.dragonEgg);
+            /*ender dragon egg recipe*/
+            GameRegistry.addRecipe(dragonEggStack, "XXX" ,"XYX", "XXX",
+            		'X',Block.obsidian , 'Y',Item.netherStar);
             
             GameRegistry.registerBlock(GoldenWood, "Golden Wood");
             LanguageRegistry.addName(GoldenWood, "Golden Wood");
