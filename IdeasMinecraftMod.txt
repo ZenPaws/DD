@@ -1,6 +1,12 @@
 Regen bush golden apples (rare)
 Raccoons
+<<<<<<< HEAD
 Different damage values for trees
+=======
+Diffrent damage values for trees
+>>>>>>> af8c8b9c4562161ba3702924f4d5f1cbd8205d77
 Plants/w sapling properties 
 Keep the wooden tools the same
+
+Adding textures for the blocks
 
