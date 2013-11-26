@@ -1,10 +1,7 @@
 package net.DD.mod;
 
-import net.DD.mod.blocks.SugarCaneBlock;
 import net.DD.mod.lib.Version;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
@@ -76,7 +73,10 @@ public class WoodModConf {
             GameRegistry.addRecipe(dragonEggStack, "XXX" ,"XYX", "XXX",
             		'X',Block.obsidian , 'Y',Item.netherStar);
             
-            
+            // sugarcane block
+            ItemStack sugarblockStack = new ItemStack(Block.SugarCaneBlock,1);
+            GameRegistry.addRecipe(sugarblockStack, "XXX", "XXX", "XXX",
+            		'X', Block.//Where the fuck is sugarcane)
             
             
             
