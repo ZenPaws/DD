@@ -1,7 +1,11 @@
 package net.DD.mod;
 
+import net.DD.mod.blocks.SugarCaneBlock;
+import net.DD.mod.lib.BlockConf;
 import net.DD.mod.lib.Version;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
@@ -13,6 +17,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @Mod(modid = Version.MOD_ID,
@@ -22,6 +27,8 @@ version = Version.MOD_VERSION)
 @NetworkMod(clientSideRequired=true)
 public class WoodModConf {
 	
+	//Set the SugarCaneBlock In forge + any parameters
+	public final static Block SugarCaneBlock = new SugarCaneBlock(BlockConf.SUGARCANEBLOCK_ID);
 	
 	 // The instance of your mod that Forge uses.
     @Instance(Version.MOD_ID)
@@ -42,46 +49,29 @@ public class WoodModConf {
     public void load(FMLInitializationEvent event) {
             proxy.registerRenderers();
             
-            //Blocks + crafting in the game goes in here
-            ItemStack dirtStack = new ItemStack(Block.dirt,3); // This 2 doesn't do shit
-            ItemStack redstoneStack = new ItemStack(Item.redstone,64);
-            ItemStack WoolWhiteStack = new ItemStack(Block.cloth,1,2);
-            ItemStack fleshStack = new ItemStack(Item.rottenFlesh,17);
-            
-            GameRegistry.addShapelessRecipe(fleshStack, Item.redstone,redstoneStack,dirtStack,dirtStack);// Item.redstone can work instead of stack much easier
-       
-            ItemStack appleStack = new ItemStack(Item.appleRed,1);
-            ItemStack goldenAppleStack = new ItemStack(Item.appleGold,1);
-            ItemStack goldenNuggetStack = new ItemStack(Item.goldNugget,5);
+          //register the Sugar Cane block with MC forge
+            GameRegistry.registerBlock(SugarCaneBlock, BlockConf.SUGARCANEBLOCK_ULOC_NAME);
+           LanguageRegistry.addName(SugarCaneBlock, BlockConf.SUGARCANEBLOCK_NAME);
             
             
-            
-            
-            GameRegistry.addShapelessRecipe(goldenAppleStack,appleStack,goldenNuggetStack);
-            GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); // The 2 dirtStack's makes it so you need 2 dirt
-            
-            
-            GameRegistry.addShapelessRecipe(redstoneStack,dirtStack,dirtStack); 
-            
-            
-            /*---------My shaped crafting here----------*/
-            GameRegistry.addRecipe(goldenNuggetStack, "XY" , "YX",
-            		'X',appleStack , 'Y',fleshStack);
-            
-            /*ender dragon egg recipe*/
+            //ender dragon egg recipe
             ItemStack dragonEggStack = new ItemStack(Block.dragonEgg);
             GameRegistry.addRecipe(dragonEggStack, "XXX" ,"XYX", "XXX",
             		'X',Block.obsidian , 'Y',Item.netherStar);
             
-            // sugarcane block
-            ItemStack sugarblockStack = new ItemStack(Block.SugarCaneBlock,1);
+            //Block of melon to slices
+            ItemStack MelonSlice = new ItemStack(Item.melon,9);
+            GameRegistry.addShapelessRecipe(MelonSlice, Block.melon);
+            
+            //SugarCane Block to Sugarcane
+            ItemStack Sugarcane = new ItemStack(Item.reed,9);
+            GameRegistry.addShapelessRecipe(Sugarcane, SugarCaneBlock);
+            
+            // SugarCane block
+            ItemStack sugarblockStack = new ItemStack(SugarCaneBlock,1);
             GameRegistry.addRecipe(sugarblockStack, "XXX", "XXX", "XXX",
-            		'X', Block.//Where the fuck is sugarcane)
-            
-            
-            
-            
-            
+            		'X', Item.reed); //Where the fuck is sugarcane aka Reed
+
     }
    
     @EventHandler
