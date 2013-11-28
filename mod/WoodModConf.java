@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -48,6 +49,9 @@ public class WoodModConf {
     @EventHandler
     public void load(FMLInitializationEvent event) {
             proxy.registerRenderers();
+            
+            
+            MinecraftForge.EVENT_BUS.register(new CustomDrops());
             
           //register the Sugar Cane block with MC forge
             GameRegistry.registerBlock(SugarCaneBlock, BlockConf.SUGARCANEBLOCK_ULOC_NAME);
